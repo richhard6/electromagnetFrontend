@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Routes,
+  BrowserRouter,
+} from 'react-router-dom';
+import Homepage from './pages/Homepage';
+import Marketplace from './pages/Marketplace';
+import Competition from './pages/Competition';
+import HumanResources from './pages/HumanResources';
 
-function App() {
+console.log('eweasd');
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Homepage />} />
+        <Route path="/marketplace" element={<Marketplace />} />
+        <Route path="/competition" element={<Competition />} />
+        <Route path="/hr" element={<HumanResources />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
